@@ -12,7 +12,7 @@ userRoutes.post('/add', (req, response) => {
     response.json({result:'success'});
 });
 userRoutes.get('/', (req, response) => {
-    let userlist : {name: string, uname:string, email:string, role:string} [];
+    let userlist : [{name: string, uname:string, email:string, role:string}] ;
         
     db.run("CREATE TABLE IF NOT EXISTS users (name TEXT, uname TEXT, email TEXT,role TEXT,avatar TEXT)");
     db.all('SELECT * FROM users', [], (err, rows) => {
@@ -27,7 +27,7 @@ userRoutes.get('/', (req, response) => {
                 email: rows[i].email,
                 role: rows[i].role
             }*/
-            console.log(rows[i].uname);
+            response.json(rows);
             
         }
         
