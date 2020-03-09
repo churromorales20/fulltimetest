@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="submitStudentForm()" #resetStudentForm="ngForm" novalidate>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Add a new user</h4>
+                <div class="form-group">
+                    <label for="" class="label-form">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="" class="label-form">Username</label>
+                    <input type="text" class="form-control" formControlName="uname">
+                </div>
+                <div class="form-group">
+                    <label for="" class="label-form">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label for="" class="label-form">Role</label>
+                    <select name="" id="" class="form-control" formControlName="role">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="" class="label-form">Avatar</label>
+                    <input type="file" class="file">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><button class="btn btn-warning"><fa-icon [icon]="faBan"></fa-icon> Cancel</button></div>
+            <div class="col-md-2"><button class="btn btn-primary" type="submit"><fa-icon [icon]="faSave"></fa-icon> Save</button></div>
+        </div>
+    </form>
+</div>
